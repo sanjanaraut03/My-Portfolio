@@ -1,0 +1,159 @@
+#contact {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Ensures items wrap when needed */
+}
+
+.leftcontact {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftcontact img {
+    width: 50%;
+    filter: drop-shadow(2px 2px 10px rgb(206, 85, 206));
+}
+
+.rightcontact {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    margin-top: 50px;
+    width: 80%;
+    height: 70%;
+    background-color: rgb(35, 39, 43);
+    box-shadow: 2px 2px 15px rgb(71, 62, 62);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 20px;
+}
+
+form:hover {
+    box-shadow: 2px 2px 10px rgba(222, 71, 233, 0.692), 2px 2px 20px rgba(222, 71, 233, 0.692);
+}
+
+form input {
+    width: 80%;
+    height: 50px;
+    border: 2px solid rgb(230, 83, 230);
+    border-radius: 20px;
+    padding: 20px;
+    outline: none;
+}
+
+#textarea {
+    width: 80%;
+    height: 200px;
+    border: 2px solid rgb(230, 83, 230);
+    border-radius: 20px;
+    padding: 20px;
+    outline: none;
+}
+
+#btn {
+    width: 100px;
+    height: 50px;
+    background-color: rgb(230, 83, 230);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+#btn:hover {
+    background-color: transparent;
+    color: rgb(230, 83, 230);
+}
+
+/* Media query for screens up to 750px */
+@media (max-width: 750px) {
+    #contact {
+        flex-direction: column;
+        height: auto;
+    }
+    .leftcontact {
+        width: 100%;
+        height: 50vh;
+    }
+    .leftcontact img {
+        width: 60%;
+    }
+    .rightcontact {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+    }
+    form {
+        width: 90%; /* Increase width for better use of space */
+        height: auto; /* Adjust form height */
+        padding: 20px; /* Add padding to avoid edge contact */
+    }
+    form input, #textarea, #btn {
+        width: 100%; /* Ensure form elements are full-width */
+        margin: 10px 0; /* Add spacing between form elements */
+    }
+}
+
+/* Keyframes for sliding from the left */
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes for sliding from the right */
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply slide-in-left animation */
+.slide-in-left {
+    animation: slide-in-left 1s ease-out;
+}
+
+/* Apply slide-in-right animation */
+.slide-in-right {
+    animation: slide-in-right 1s ease-out;
+}
+
+/* Keyframes for the bounce effect */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Apply bounce animation when hovering over the form */
+.rightcontact form:hover {
+    animation: bounce 0.5s ease-in-out;
+}
